@@ -4,6 +4,7 @@ import com.groupthree.bean.CoffeeBill;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 public interface BillTransactionServiceInterface {
@@ -20,5 +21,6 @@ public interface BillTransactionServiceInterface {
 	public void createCoffeeOrder(int person, String orderNum, int selectedCoffeeType, int selectedCoffeeSize,
 			int selectedAddon) throws ClassNotFoundException, SQLException;
 
-
+	public List getDetailedOrders(int person, String initialOrderNum);
+	
 }

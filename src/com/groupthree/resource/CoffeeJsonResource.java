@@ -2,6 +2,7 @@ package com.groupthree.resource;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import com.groupthree.service.CoffeeSizeServiceInterface;
 import com.groupthree.service.CoffeeTypeServiceInterface;
 import com.groupthree.service.CoffeeVoucherServiceInterface;
 import com.groupthree.service.PersonDetailsServiceInterface;
+import com.groupthree.util.OrderDetails;
 
 
 
@@ -135,7 +137,12 @@ public class CoffeeJsonResource {
 			e.printStackTrace();
 		}
 	}
-		 
+	
+	@GetMapping(path = "/json/customer/orders/{custid}/{orderno}",produces ="application/json")
+	public List<OrderDetails> getDetailedOrders(@PathVariable("custid")int userid, @PathVariable("orderno")String OrderNum) {
+		   List<OrderDetails> orders=transactionService.getDetailedOrders(userid,OrderNum);
+		   return orders;
+	} 
 		 @PostMapping(path = "/json/customer/bill/{custid}/{orderno}/{voucherid}",consumes ="application/json")
 		 public ArrayList  generateBill(@PathVariable("custid")int userid, @PathVariable("orderno")String OrderNum, 
 				 @PathVariable("voucherid")int selectedVoucher) {
