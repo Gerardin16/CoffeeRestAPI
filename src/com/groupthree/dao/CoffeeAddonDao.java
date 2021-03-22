@@ -23,7 +23,7 @@ private SessionFactory sessionFactory;
 
 
     @Override
-    public ArrayList<CoffeeAddon> getCoffeeAddon() throws ClassNotFoundException, SQLException {
+    public ArrayList<CoffeeAddon> getCoffeeAddon()  {
     	
 		Session session=sessionFactory.openSession();
 		

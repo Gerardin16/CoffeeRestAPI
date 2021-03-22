@@ -37,7 +37,7 @@ public class BillTransactionDao implements BillTransactionDaoInterface {
 
 	@Override
     public void createOrder(int person,String orderNum, int selectedCoffeeType, int selectedCoffeeSize, int selectedAddon)
-            throws ClassNotFoundException, SQLException {
+          {
         
        
 		Session session=sessionFactory.openSession();
@@ -62,7 +62,7 @@ public class BillTransactionDao implements BillTransactionDaoInterface {
     }
 
 	@Override
-	public double getOrders(int person,String initialOrderNum) throws SQLException, ClassNotFoundException {
+	public double getOrders(int person,String initialOrderNum)  {
 		 double totalSum=0.0;
 		
 		Session session=sessionFactory.openSession();
@@ -83,7 +83,7 @@ public class BillTransactionDao implements BillTransactionDaoInterface {
 	}
 
 	@Override
-	public void createBill(int person,String initialOrderNum, int selectedVoucher, double totalBill) throws SQLException, ClassNotFoundException {
+	public void createBill(int person,String initialOrderNum, int selectedVoucher, double totalBill) {
 		
 		Session session=sessionFactory.openSession();
 		

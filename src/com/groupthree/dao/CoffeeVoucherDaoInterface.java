@@ -10,5 +10,5 @@ public interface CoffeeVoucherDaoInterface {
 
 
 
-    ArrayList<CoffeeVoucher> getCoffeeVoucher() throws ClassNotFoundException, SQLException;
+    ArrayList<CoffeeVoucher> getCoffeeVoucher() ;
 }

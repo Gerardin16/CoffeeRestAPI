@@ -24,7 +24,7 @@ private SessionFactory sessionFactory;
 
 	
 		@Override
-		public ArrayList<PersonDetails> searchRecordByPhoneno(long person_phoneno) throws ClassNotFoundException, SQLException {
+		public ArrayList<PersonDetails> searchRecordByPhoneno(long person_phoneno){
 //			
 			
 			//For every Transaction one Session object
@@ -41,7 +41,7 @@ private SessionFactory sessionFactory;
 			return   (ArrayList<PersonDetails>) person;
 }
 
-		public PersonDetails insertPerson(String name, long personPhoneno) throws ClassNotFoundException, SQLException {
+		public PersonDetails insertPerson(String name, long personPhoneno){
 		
 			Session session=sessionFactory.openSession();
 			

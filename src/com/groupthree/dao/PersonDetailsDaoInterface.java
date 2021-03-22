@@ -8,6 +8,6 @@ import com.groupthree.bean.PersonDetails;
 
 public interface PersonDetailsDaoInterface {
 
-     public PersonDetails insertPerson(String name, long personPhoneno) throws ClassNotFoundException, SQLException;
-	ArrayList<PersonDetails> searchRecordByPhoneno(long person_phoneno)throws ClassNotFoundException,SQLException;
+     public PersonDetails insertPerson(String name, long personPhoneno) ;
+	ArrayList<PersonDetails> searchRecordByPhoneno(long person_phoneno);
 }

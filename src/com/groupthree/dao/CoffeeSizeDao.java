@@ -21,7 +21,7 @@ private SessionFactory sessionFactory;
 
 
     @Override
-    public ArrayList<CoffeeSize> getCoffeeSize() throws ClassNotFoundException, SQLException {
+    public ArrayList<CoffeeSize> getCoffeeSize()  {
     	
 		
 		Session session=sessionFactory.openSession();

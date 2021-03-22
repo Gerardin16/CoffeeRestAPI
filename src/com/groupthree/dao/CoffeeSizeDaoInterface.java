@@ -9,5 +9,5 @@ public interface CoffeeSizeDaoInterface {
 
 
 
-	ArrayList<CoffeeSize> getCoffeeSize() throws ClassNotFoundException, SQLException;
+	ArrayList<CoffeeSize> getCoffeeSize() ;
 }

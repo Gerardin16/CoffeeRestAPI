@@ -22,7 +22,7 @@ private SessionFactory sessionFactory;
 	}
 
     @Override
-    public ArrayList<CoffeeType> getCoffeeType() throws ClassNotFoundException,SQLException {
+    public ArrayList<CoffeeType> getCoffeeType() {
     	
 		
 		//For every Transaction one Session object

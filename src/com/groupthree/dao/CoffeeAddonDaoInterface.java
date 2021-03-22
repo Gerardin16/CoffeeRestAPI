@@ -9,5 +9,5 @@ public interface CoffeeAddonDaoInterface {
 
 
 
-	ArrayList<CoffeeAddon> getCoffeeAddon() throws ClassNotFoundException, SQLException;
+	ArrayList<CoffeeAddon> getCoffeeAddon() ;
 }

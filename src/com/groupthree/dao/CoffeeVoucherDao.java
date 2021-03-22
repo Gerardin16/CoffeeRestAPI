@@ -30,7 +30,7 @@ private SessionFactory sessionFactory;
 	}
 
     @Override
-    public ArrayList<CoffeeVoucher> getCoffeeVoucher() throws ClassNotFoundException,SQLException {
+    public ArrayList<CoffeeVoucher> getCoffeeVoucher() {
 
 		Session session=sessionFactory.openSession();
 		

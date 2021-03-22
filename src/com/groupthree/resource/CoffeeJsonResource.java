@@ -42,17 +42,16 @@ public class CoffeeJsonResource {
 	@Autowired
     private CoffeeTypeServiceInterface coffeeType;
 	
-	ArrayList<PersonDetails> person;
-	PersonDetails customer;
-	ArrayList<CoffeeType> coffeeTypeList;
-	ArrayList<CoffeeSize> coffeeSizeList;
-	ArrayList<CoffeeAddon> coffeeAddonList;
-	ArrayList<CoffeeVoucher> coffeeVoucherList;
-	 ArrayList bill;
 	
-	@GetMapping(path = "/json/customer/{phnum}", produces="application/json")
+
+
+
+
+
+	
+	@GetMapping(path = "/json/customers/{phnum}", produces="application/json")
 	public ArrayList<PersonDetails> searchRecordByPhoneno(@PathVariable("phnum")long person_phoneno) {
-		
+		ArrayList<PersonDetails> person=null;
 		try {
 			 person=personDetails.searchRecordByPhoneno(person_phoneno);
 		} catch (ClassNotFoundException | SQLException e) {
@@ -62,9 +61,11 @@ public class CoffeeJsonResource {
 		return person;
 	}
 	
-	@PostMapping(path = "/json/customer/{custname}/{phnum}",consumes ="application/json" )
+	@PostMapping(path = "/json/customers/{custname}/{phnum}",consumes ="application/json" )
 	public PersonDetails insertPerson(@PathVariable("custname")String name,@PathVariable("phnum")long person_phoneno)  {
+		PersonDetails customer=null;
 		try {
+			
 			customer=personDetails.insertPerson(name,person_phoneno);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -80,8 +81,10 @@ public class CoffeeJsonResource {
 	
 	@GetMapping(path = "/json/coffeetypes", produces="application/json")
 	public ArrayList<CoffeeType> getCoffeeType() {
-		
+		ArrayList<CoffeeType> coffeeTypeList=null;
 		try {
+			
+			
 			coffeeTypeList=coffeeType.getCoffeeType();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -91,8 +94,9 @@ public class CoffeeJsonResource {
 	}
 	@GetMapping(path = "/json/coffeesizes", produces="application/json")
 	public ArrayList<CoffeeSize> getCoffeeSize() {
-		
+		ArrayList<CoffeeSize> coffeeSizeList=null;
 		try {
+			
 			coffeeSizeList=coffeeSize.getCoffeeSize();
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -103,7 +107,7 @@ public class CoffeeJsonResource {
 	
 	@GetMapping(path = "/json/coffeeaddons", produces="application/json")
 	public ArrayList<CoffeeAddon> getCoffeeAddons() {
-		
+		ArrayList<CoffeeAddon> coffeeAddonList=null;
 		try {
 			coffeeAddonList=coffeeAddon.getCoffeeAddon();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -114,7 +118,7 @@ public class CoffeeJsonResource {
 	}
 	@GetMapping(path = "/json/coffeevoucher", produces="application/json")
 	public ArrayList<CoffeeVoucher> getCoffeeVoucher() {
-		
+		ArrayList<CoffeeVoucher> coffeeVoucherList=null;
 		try {
 			coffeeVoucherList=coffeeVoucher.getCoffeeVoucher();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -123,7 +127,7 @@ public class CoffeeJsonResource {
 		}
 		return coffeeVoucherList;
 	}
-	@PostMapping(path = "/json/customer/order/{custid}/{orderno}/{typeid}/{sizeid}/{addonid}",consumes ="application/json")
+	@PostMapping(path = "/json/customers/order/{custid}/{orderno}/{typeid}/{sizeid}/{addonid}",consumes ="application/json")
 	public void createCoffeeOrder(@PathVariable("custid")int userid, @PathVariable("orderno")String OrderNum, 
 			@PathVariable("typeid")int selectedCoffeeType,@PathVariable("sizeid") int selectedCoffeeSize,
 			@PathVariable("addonid")int selectedAddon) {
@@ -138,15 +142,15 @@ public class CoffeeJsonResource {
 		}
 	}
 	
-	@GetMapping(path = "/json/customer/orders/{custid}/{orderno}",produces ="application/json")
+	@GetMapping(path = "/json/customers/orders/{custid}/{orderno}",produces ="application/json")
 	public List<OrderDetails> getDetailedOrders(@PathVariable("custid")int userid, @PathVariable("orderno")String OrderNum) {
 		   List<OrderDetails> orders=transactionService.getDetailedOrders(userid,OrderNum);
 		   return orders;
 	} 
-		 @PostMapping(path = "/json/customer/bill/{custid}/{orderno}/{voucherid}",consumes ="application/json")
+		 @PostMapping(path = "/json/customers/bill/{custid}/{orderno}/{voucherid}",consumes ="application/json")
 		 public ArrayList  generateBill(@PathVariable("custid")int userid, @PathVariable("orderno")String OrderNum, 
 				 @PathVariable("voucherid")int selectedVoucher) {
-			
+				ArrayList bill=null;
 			try {
 				bill = transactionService.generateBill(userid,OrderNum,selectedVoucher);
 			} catch (ClassNotFoundException e) {

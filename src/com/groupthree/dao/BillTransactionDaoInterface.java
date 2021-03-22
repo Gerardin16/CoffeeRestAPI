@@ -11,10 +11,10 @@ import com.groupthree.util.OrderDetails;
 public interface BillTransactionDaoInterface {
 
 
-    public void createOrder(int person,String orderNum, int selectedCoffeeType, int selectedCoffeeSize, int selectedAddon) throws ClassNotFoundException, SQLException;
+    public void createOrder(int person,String orderNum, int selectedCoffeeType, int selectedCoffeeSize, int selectedAddon);
 
-	public double getOrders(int person,String initialOrderNum) throws SQLException, ClassNotFoundException;
+	public double getOrders(int person,String initialOrderNum) ;
 
-    void createBill(int person,String initialOrderNum, int selectedVoucher, double totalBill) throws SQLException, ClassNotFoundException;
+    void createBill(int person,String initialOrderNum, int selectedVoucher, double totalBill) ;
     public List<OrderDetails> getDetailedOrders(int person, String initialOrderNum);
 }

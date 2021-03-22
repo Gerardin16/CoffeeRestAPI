@@ -7,7 +7,7 @@ import com.groupthree.bean.CoffeeType;
 
 public interface CoffeeTypeDaoInterface {
 
-    ArrayList<CoffeeType> getCoffeeType() throws ClassNotFoundException, SQLException;
+    ArrayList<CoffeeType> getCoffeeType();
 
 
 }
