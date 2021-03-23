@@ -26,7 +26,7 @@ public class CoffeeAddonService implements CoffeeAddonServiceInterface {
 
 
 	@Override
-    public ArrayList<CoffeeAddon> getCoffeeAddon() throws SQLException, ClassNotFoundException {
+    public ArrayList<CoffeeAddon> getCoffeeAddon() {
         return coffeeAddonDao.getCoffeeAddon();
 
     }

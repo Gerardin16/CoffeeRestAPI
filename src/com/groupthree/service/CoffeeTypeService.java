@@ -30,7 +30,7 @@ public class CoffeeTypeService implements CoffeeTypeServiceInterface{
 
 
 	@Override
-    public ArrayList<CoffeeType> getCoffeeType() throws ClassNotFoundException, SQLException {
+    public ArrayList<CoffeeType> getCoffeeType()  {
         return coffeeTypeDao.getCoffeeType();
     }
 

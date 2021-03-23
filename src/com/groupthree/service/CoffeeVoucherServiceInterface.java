@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface CoffeeVoucherServiceInterface {
 
-    ArrayList<CoffeeVoucher> getCoffeeVoucher()throws ClassNotFoundException, SQLException;
+    ArrayList<CoffeeVoucher> getCoffeeVoucher();
 }

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface CoffeeTypeServiceInterface {
-    ArrayList<CoffeeType> getCoffeeType()throws ClassNotFoundException, SQLException;
+    ArrayList<CoffeeType> getCoffeeType();
 
 
 }

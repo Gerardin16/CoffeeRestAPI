@@ -50,7 +50,7 @@ public class BillTransactionService implements BillTransactionServiceInterface{
 
     @Override
     public ArrayList  generateBill(int person,String initialOrderNum, int selectedVoucher)
-			throws ClassNotFoundException, SQLException {
+			 {
     	double totalValue=0;
     	double discount = 0;
     	double netValue;
@@ -116,7 +116,7 @@ public class BillTransactionService implements BillTransactionServiceInterface{
 
 	@Override
 	public void createCoffeeOrder(int person, String orderNum, int selectedCoffeeType, int selectedCoffeeSize,
-			int selectedAddon) throws ClassNotFoundException, SQLException {
+			int selectedAddon) {
 		billTrans.createOrder(person,orderNum,selectedCoffeeType,selectedCoffeeSize,selectedAddon);
 		
 	}

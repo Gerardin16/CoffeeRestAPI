@@ -6,5 +6,5 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface CoffeeAddonServiceInterface {
-    ArrayList<CoffeeAddon> getCoffeeAddon()throws ClassNotFoundException, SQLException;
+    ArrayList<CoffeeAddon> getCoffeeAddon();
 }
